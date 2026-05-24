@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mohit Kushwah - Full Stack Developer, Flutter Developer, and Cyber Security Enthusiast. Discover high-performance apps, secure systems, and innovative software solutions.">
+    <meta name="keywords" content="Mohit Kushwah, Portfolio, Full Stack Developer, Flutter Developer, Cyber Security, Acropolis Institute, Daily Bhakti App, SkillSwap, Rescue Mesh">
+    <meta name="author" content="Mohit Kushwah">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mariobeats.github.io/">
+    <meta property="og:title" content="Mohit Kushwah | Portfolio">
+    <meta property="og:description" content="Premium developer portfolio of Mohit Kushwah. Full Stack & Flutter Developer specializing in Cyber Security.">
+    <meta property="og:image" content="assets/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Mohit Kushwah | Portfolio">
+    <meta property="twitter:description" content="Premium developer portfolio of Mohit Kushwah. Full Stack & Flutter Developer specializing in Cyber Security.">
+
+    <title>Mohit Kushwah | Full Stack & Flutter Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Canvas Particle Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Page Loading Screen -->
+    <div id="loader" class="loader-container" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-terminal">
+                <span class="terminal-prompt">$</span>
+                <span class="terminal-text" id="loader-text">initializing portfolio...</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="navbar" id="main-header">
+        <div class="navbar-container">
+            <a href="#" class="nav-logo" id="nav-logo-link" aria-label="Mohit Kushwah Home">
+                <span class="logo-symbol">&lt;/&gt;</span>
+                <span class="logo-text">Mohit<span class="highlight">.dev</span></span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+                    <li><a href="#skills" class="nav-link" id="nav-skills">Skills</a></li>
+                    <li><a href="#projects" class="nav-link" id="nav-projects">Projects</a></li>
+                    <li><a href="#certifications" class="nav-link" id="nav-certifications">Certifications</a></li>
+                    <li><a href="#github" class="nav-link" id="nav-github">GitHub</a></li>
+                    <li><a href="#contact" class="nav-link" id="nav-contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#contact" class="btn-primary btn-sm" id="nav-cta-contact">Hire Me</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Toggle navigation menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="glow-orb glow-orb-1" aria-hidden="true"></div>
+            <div class="glow-orb glow-orb-2" aria-hidden="true"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="hero-tag" id="hero-welcome-tag">
+                        <span class="pulse-dot"></span> Welcome to my space
+                    </div>
+                    <h1 class="hero-title" id="hero-main-title">
+                        Hi, I'm <span class="gradient-text">Mohit Kushwah</span>
+                    </h1>
+                    <div class="typewriter-container" aria-live="polite">
+                        <span class="typewriter-static">I am a</span>
+                        <span class="typewriter-text" id="typewriter"></span>
+                        <span class="cursor" aria-hidden="true">|</span>
+                    </div>
+                    <p class="hero-description" id="hero-desc-para">
+                        B.Tech Computer Science student specializing in Cyber Security. Passionate about crafting high-performance mobile applications and secure, scalable full-stack web solutions.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn-primary" id="hero-cta-projects">
+                            <span>View Projects</span> <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a href="assets/Mohit_Kushwah_Resume.pdf" download="Mohit_Kushwah_Resume.pdf" class="btn-secondary" id="hero-cta-resume">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i> <span>Download Resume</span>
+                        </a>
+                        <a href="#contact" class="btn-tertiary" id="hero-cta-contact-me">
+                            <span>Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#about" class="scroll-indicator" aria-label="Scroll to About Section" id="hero-scroll-btn">
+                <span class="scroll-mouse">
+                    <span class="scroll-wheel"></span>
+                </span>
+                <span class="scroll-text">Scroll Down</span>
+            </a>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section scroll-reveal" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Introduction</span>
+                    <h2 class="section-title">About Me</h2>
+                    <div class="section-underline"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card glass-panel reveal-left" id="about-card-details">
+                        <div class="about-card-header">
+                            <div class="card-dot-group">
+                                <span class="card-dot red"></span>
+                                <span class="card-dot yellow"></span>
+                                <span class="card-dot green"></span>
+                            </div>
+                            <span class="card-terminal-title">mohit_profile.sh</span>
+                        </div>
+                        <div class="about-card-body code-font">
+                            <p><span class="code-keyword">const</span> developer = {</p>
+                            <p class="indent-1"><span class="code-property">name</span>: <span class="code-string">"Mohit Kushwah"</span>,</p>
+                            <p class="indent-1"><span class="code-property">education</span>: <span class="code-string">"B.Tech CSE - Cyber Security"</span>,</p>
+                            <p class="indent-1"><span class="code-property">institution</span>: <span class="code-string">"Acropolis Institute of Technology and Research"</span>,</p>
+                            <p class="indent-1"><span class="code-property">location</span>: <span class="code-string">"Indore, India"</span>,</p>
+                            <p class="indent-1"><span class="code-property">passion</span>: <span class="code-string">"Solving real-world problems using software"</span>,</p>
+                            <p class="indent-1"><span class="code-property">interests</span>: [<span class="code-string">"Full Stack Web"</span>, <span class="code-string">"Flutter Dev"</span>, <span class="code-string">"Ethical Hacking"</span>, <span class="code-string">"BLE Mesh"</span>]</p>
+                            <p>};</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-info reveal-right" id="about-text-content">
+                        <h3>Combining Code, Design, and Security</h3>
+                        <p class="about-para">
+                            Currently pursuing my Bachelor of Technology at the **Acropolis Institute of Technology and Research**, focusing on Computer Science with a specialization in Cyber Security. This dual focus allows me to not only build feature-rich web and mobile applications but also ensure they are built with defensive design principles.
+                        </p>
+                        <p class="about-para">
+                            My journey is driven by curiosity and the desire to build systems that work under extreme constraints—whether that is an offline communication network for disaster recovery or cross-platform applications optimized for local resource environments.
+                        </p>
+                        
+                        <div class="stats-counter-grid">
+                            <div class="stat-counter-card glass-panel">
+                                <div class="stat-num" id="stat-projects-num">10+</div>
+                                <div class="stat-label">Projects Built</div>
+                            </div>
+                            <div class="stat-counter-card glass-panel">
+                                <div class="stat-num" id="stat-cert-num">3+</div>
+                                <div class="stat-label">IBM Certifications</div>
+                            </div>
+                            <div class="stat-counter-card glass-panel">
+                                <div class="stat-num" id="stat-sec-num">100%</div>
+                                <div class="stat-label">Secure Mindset</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section scroll-reveal" id="skills">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Proficiencies</span>
+                    <h2 class="section-title">Technical Expertise</h2>
+                    <div class="section-underline"></div>
+                </div>
+            </div>
+
+            <!-- Full-width horizontal scrolling skills marquee -->
+            <div class="skills-ticker-container" id="skills-ticker-box">
+                <div class="skills-ticker-track" id="skills-ticker-track">
+                    <!-- HTML5 -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-brands fa-html5 skill-icon html" aria-hidden="true"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <!-- CSS3 -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-brands fa-css3-alt skill-icon css" aria-hidden="true"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <!-- JavaScript -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-brands fa-js skill-icon js" aria-hidden="true"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <!-- React -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-brands fa-react skill-icon react" aria-hidden="true"></i>
+                        <span>React</span>
+                    </div>
+                    <!-- Node.js -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-brands fa-node-js skill-icon node" aria-hidden="true"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <!-- Express.js -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-solid fa-server skill-icon express" aria-hidden="true"></i>
+                        <span>Express.js</span>
+                    </div>
+                    <!-- Flutter -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-solid fa-mobile-screen-button skill-icon flutter" aria-hidden="true"></i>
+                        <span>Flutter</span>
+                    </div>
+                    <!-- MongoDB -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-solid fa-database skill-icon mongodb" aria-hidden="true"></i>
+                        <span>MongoDB</span>
+                    </div>
+                    <!-- MySQL -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-solid fa-table skill-icon mysql" aria-hidden="true"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <!-- Git -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-brands fa-git-alt skill-icon git" aria-hidden="true"></i>
+                        <span>Git</span>
+                    </div>
+                    <!-- GitHub -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-brands fa-github skill-icon github" aria-hidden="true"></i>
+                        <span>GitHub</span>
+                    </div>
+                    <!-- Postman -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-solid fa-paper-plane skill-icon postman" aria-hidden="true"></i>
+                        <span>Postman</span>
+                    </div>
+                    <!-- VS Code -->
+                    <div class="skill-ticker-item glass-panel">
+                        <i class="fa-solid fa-code skill-icon vscode" aria-hidden="true"></i>
+                        <span>VS Code</span>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section scroll-reveal" id="projects">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Portfolio</span>
+                    <h2 class="section-title">Featured Projects</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Daily Bhakti App -->
+                    <article class="project-card glass-panel reveal-up" id="project-daily-bhakti">
+                        <div class="project-image-wrapper">
+                            <!-- Using standard SVG representation as card header visual, since it's fully customizable and responsive -->
+                            <div class="project-visual daily-bhakti-visual" aria-hidden="true">
+                                <i class="fa-solid fa-dharmachakra visual-main-icon"></i>
+                                <span class="visual-bg-tag">Flutter</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Mobile Application</span>
+                            <h3 class="project-title">Daily Bhakti App</h3>
+                            <p class="project-desc">
+                                A spiritual companion app designed for personal devotion and mindfulness, combining audio stream management with local caching.
+                            </p>
+                            <div class="project-features">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Dynamic audio streaming with background playback controls.</li>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Personal calendar integration for ritual trackers and festivals.</li>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Fully localized supporting multi-lingual interfaces.</li>
+                                </ul>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">Dart</span>
+                                <span class="tag">SQLite</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mariobeats/daily-bhakti-app" class="project-link-btn btn-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository for Daily Bhakti App">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i> Github
+                                </a>
+                                <a href="#" class="project-link-btn btn-icon btn-demo" aria-label="Live Demo for Daily Bhakti App">
+                                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: SkillSwap -->
+                    <article class="project-card glass-panel reveal-up" id="project-skillswap">
+                        <div class="project-image-wrapper">
+                            <div class="project-visual skillswap-visual" aria-hidden="true">
+                                <i class="fa-solid fa-people-arrows visual-main-icon"></i>
+                                <span class="visual-bg-tag">MERN Stack</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">Web Application</span>
+                            <h3 class="project-title">SkillSwap</h3>
+                            <p class="project-desc">
+                                A peer-to-peer barter platform where individuals trade technical and creative skills without currency exchange.
+                            </p>
+                            <div class="project-features">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Real-time chat & session scheduling via WebSockets.</li>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Smart recommendation engine matching complementary skillsets.</li>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Rating and verification framework to prevent service abuse.</li>
+                                </ul>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Socket.io</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mariobeats/skillswap" class="project-link-btn btn-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository for SkillSwap">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i> Github
+                                </a>
+                                <a href="#" class="project-link-btn btn-icon btn-demo" aria-label="Live Demo for SkillSwap">
+                                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: Rescue Mesh -->
+                    <article class="project-card glass-panel reveal-up" id="project-rescue-mesh">
+                        <div class="project-image-wrapper">
+                            <div class="project-visual rescue-mesh-visual" aria-hidden="true">
+                                <i class="fa-solid fa-tower-broadcast visual-main-icon"></i>
+                                <span class="visual-bg-tag">BLE Mesh</span>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <span class="project-category">IoT & Mobile Application</span>
+                            <h3 class="project-title">Rescue Mesh</h3>
+                            <p class="project-desc">
+                                An offline communication node utilizing BLE (Bluetooth Low Energy) mesh topologies to transmit emergency messages without cellular networks.
+                            </p>
+                            <div class="project-features">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Peer-to-peer offline packet routing protocol over BLE.</li>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Encrypted payload distribution to ensure security in crisis.</li>
+                                    <li><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Dynamic GPS triangulation sharing for locate-and-rescue teams.</li>
+                                </ul>
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Flutter</span>
+                                <span class="tag">BLE</span>
+                                <span class="tag">Cryptography</span>
+                                <span class="tag">Offline First</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/Mariobeats/rescue-mesh" class="project-link-btn btn-icon" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository for Rescue Mesh">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i> Github
+                                </a>
+                                <a href="#" class="project-link-btn btn-icon btn-demo" aria-label="Live Demo for Rescue Mesh">
+                                    <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="certifications-section scroll-reveal" id="certifications">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Credentials</span>
+                    <h2 class="section-title">Certifications</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="certifications-grid">
+                    <!-- IBM Granite -->
+                    <div class="cert-card glass-panel reveal-left" id="cert-ibm-granite">
+                        <div class="cert-icon-wrapper">
+                            <i class="fa-solid fa-circle-nodes cert-main-icon ibm"></i>
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-issuer">IBM SkillsBuild</span>
+                            <h3 class="cert-title">IBM Granite Models for Software Development</h3>
+                            <p class="cert-desc">Training in leveraging IBM's Granite LLM family to automate code refactoring, enforce styling guidelines, and optimize script compilation.</p>
+                            <span class="cert-date">Issued: 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- IBM Machine Learning -->
+                    <div class="cert-card glass-panel reveal-up" id="cert-ibm-ml">
+                        <div class="cert-icon-wrapper">
+                            <i class="fa-solid fa-brain cert-main-icon ibm"></i>
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-issuer">IBM</span>
+                            <h3 class="cert-title">IBM Machine Learning Professional</h3>
+                            <p class="cert-desc">Comprehensive certification covering supervised learning, unsupervised clustering, deep neural architectures, and data sanitization algorithms.</p>
+                            <span class="cert-date">Issued: 2025</span>
+                        </div>
+                    </div>
+
+                    <!-- IBM Career Planning -->
+                    <div class="cert-card glass-panel reveal-right" id="cert-ibm-career">
+                        <div class="cert-icon-wrapper">
+                            <i class="fa-solid fa-compass cert-main-icon ibm"></i>
+                        </div>
+                        <div class="cert-details">
+                            <span class="cert-issuer">IBM SkillsBuild</span>
+                            <h3 class="cert-title">Career Planning & Professional Skills</h3>
+                            <p class="cert-desc">Core competencies in agile design workflows, software engineering collaboration, project tasking, and secure engineering practices.</p>
+                            <span class="cert-date">Issued: 2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Statistics Section -->
+        <section class="github-section scroll-reveal" id="github">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Contributions</span>
+                    <h2 class="section-title">GitHub Activity</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="github-dashboard glass-panel">
+                    <div class="dashboard-header">
+                        <div class="github-user-info">
+                            <i class="fa-brands fa-github user-avatar-icon"></i>
+                            <div>
+                                <h3 class="github-username">Mariobeats</h3>
+                                <p class="github-user-subtitle">Joined 4 years ago • 45+ Repositories</p>
+                            </div>
+                        </div>
+                        <a href="https://github.com/Mariobeats" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm" id="github-view-profile-btn">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Follow on GitHub
+                        </a>
+                    </div>
+
+                    <div class="dashboard-body">
+                        <!-- Contribution Graph -->
+                        <div class="contrib-graph-wrapper">
+                            <h4>Contribution Board (Past 12 Months)</h4>
+                            <div class="contrib-graph-container" id="contribution-graph">
+                                <!-- Generated dynamically via JavaScript -->
+                            </div>
+                            <div class="contrib-legend">
+                                <span>Less</span>
+                                <span class="legend-cell level-0"></span>
+                                <span class="legend-cell level-1"></span>
+                                <span class="legend-cell level-2"></span>
+                                <span class="legend-cell level-3"></span>
+                                <span class="legend-cell level-4"></span>
+                                <span>More</span>
+                            </div>
+                        </div>
+
+                        <!-- Grid for languages and metrics -->
+                        <div class="github-metrics-grid">
+                            <div class="languages-card glass-panel-nested">
+                                <h4>Top Languages</h4>
+                                <div class="lang-list">
+                                    <div class="lang-item">
+                                        <div class="lang-meta">
+                                            <span class="lang-color dart"></span>
+                                            <span class="lang-name">Dart / Flutter</span>
+                                        </div>
+                                        <span class="lang-percentage">42%</span>
+                                    </div>
+                                    <div class="lang-item">
+                                        <div class="lang-meta">
+                                            <span class="lang-color js"></span>
+                                            <span class="lang-name">JavaScript</span>
+                                        </div>
+                                        <span class="lang-percentage">28%</span>
+                                    </div>
+                                    <div class="lang-item">
+                                        <div class="lang-meta">
+                                            <span class="lang-color python"></span>
+                                            <span class="lang-name">Python</span>
+                                        </div>
+                                        <span class="lang-percentage">18%</span>
+                                    </div>
+                                    <div class="lang-item">
+                                        <div class="lang-meta">
+                                            <span class="lang-color other"></span>
+                                            <span class="lang-name">Other (C++, HTML)</span>
+                                        </div>
+                                        <span class="lang-percentage">12%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pinned-repos-card glass-panel-nested">
+                                <h4>Pinned Repositories</h4>
+                                <div class="repos-list">
+                                    <div class="repo-item">
+                                        <a href="https://github.com/Mariobeats/rescue-mesh" target="_blank" rel="noopener noreferrer" class="repo-name">rescue-mesh</a>
+                                        <p class="repo-desc">BLE mesh architecture for disaster recovery networks.</p>
+                                        <div class="repo-meta">
+                                            <span><span class="lang-color dart"></span> Dart</span>
+                                            <span><i class="fa-regular fa-star"></i> 24</span>
+                                            <span><i class="fa-solid fa-code-fork"></i> 8</span>
+                                        </div>
+                                    </div>
+                                    <div class="repo-item">
+                                        <a href="https://github.com/Mariobeats/daily-bhakti-app" target="_blank" rel="noopener noreferrer" class="repo-name">daily-bhakti-app</a>
+                                        <p class="repo-desc">Cross-platform devotional mobile suite with local caching.</p>
+                                        <div class="repo-meta">
+                                            <span><span class="lang-color dart"></span> Dart</span>
+                                            <span><i class="fa-regular fa-star"></i> 18</span>
+                                            <span><i class="fa-solid fa-code-fork"></i> 3</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section scroll-reveal" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Reach Out</span>
+                    <h2 class="section-title">Contact Me</h2>
+                    <div class="section-underline"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Contact Information -->
+                    <div class="contact-info reveal-left" id="contact-details-box">
+                        <h3>Let's collaborate</h3>
+                        <p class="contact-intro">
+                            Have an exciting project idea, a position to fill, or just want to speak about full-stack engineering and security? Feel free to contact me using the options below or the form.
+                        </p>
+
+                        <div class="contact-methods">
+                            <a href="mailto:mk5819444@gmail.com" class="contact-method-card glass-panel hover-card" id="contact-email-link">
+                                <div class="contact-icon email">
+                                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">Email</span>
+                                    <span class="value">mk5819444@gmail.com</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right arrow-icon" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/mohit-kushwah-a9b278297/" target="_blank" rel="noopener noreferrer" class="contact-method-card glass-panel hover-card" id="contact-linkedin-link">
+                                <div class="contact-icon linkedin">
+                                    <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">LinkedIn</span>
+                                    <span class="value">linkedin.com/in/mohit-kushwah-a9b278297/</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right arrow-icon" aria-hidden="true"></i>
+                            </a>
+
+                            <a href="https://github.com/Mariobeats" target="_blank" rel="noopener noreferrer" class="contact-method-card glass-panel hover-card" id="contact-github-link">
+                                <div class="contact-icon github">
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <span class="label">GitHub</span>
+                                    <span class="value">github.com/Mariobeats</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-right arrow-icon" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="contact-form-container glass-panel reveal-right" id="contact-form-box">
+                        <form class="contact-form" id="portfolio-contact-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="form-name">Name</label>
+                                <div class="input-wrapper">
+                                    <i class="fa-regular fa-user input-icon" aria-hidden="true"></i>
+                                    <input type="text" id="form-name" name="name" placeholder="John Doe" required autocomplete="name">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-email">Email Address</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-regular fa-envelope input-icon" aria-hidden="true"></i>
+                                        <input type="email" id="form-email" name="email" placeholder="john@example.com" required autocomplete="email">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-subject">Subject</label>
+                                    <div class="input-wrapper">
+                                        <i class="fa-regular fa-bookmark input-icon" aria-hidden="true"></i>
+                                        <input type="text" id="form-subject" name="subject" placeholder="Project Inquiry" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="form-message">Message</label>
+                                <div class="input-wrapper">
+                                    <textarea id="form-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-full" id="form-submit-btn">
+                                <span>Send Message</span> <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+                            </button>
+                            <div class="form-status" id="form-status-message" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <a href="#" class="footer-logo" aria-label="Mohit Kushwah Home">
+                    <span class="logo-symbol">&lt;/&gt;</span> Mohit<span class="highlight">.dev</span>
+                </a>
+                <p class="footer-tagline">Building secure, performant, and premium digital experiences.</p>
+            </div>
+            
+            <div class="footer-links-group">
+                <ul class="footer-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#github">GitHub</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p class="copyright">&copy; <span id="current-year">2026</span> Mohit Kushwah. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/Mariobeats" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mohit-kushwah-a9b278297/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="js/main.js"></script>
+</body>
+</html>
