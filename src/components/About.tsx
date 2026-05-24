@@ -9,7 +9,6 @@ export default function About() {
   education: "B.Tech CSE (Cybersecurity)",
   institution: "Acropolis Institute, Indore",
   currentYear: "3rd Year (2023 - 2027)",
-  cgpa: "6.02",
   passions: [
     "Flutter Development",
     "MERN Full Stack",

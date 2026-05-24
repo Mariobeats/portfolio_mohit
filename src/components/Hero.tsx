@@ -37,9 +37,9 @@ const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const roles = [
-  "Flutter Developer",
   "Full Stack Developer",
-  "Cybersecurity Enthusiast"
+  "Flutter Developer",
+  "Mern stack Enthusiast"
 ];
 
 export default function Hero() {
