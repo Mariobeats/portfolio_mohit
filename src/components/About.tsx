@@ -114,10 +114,6 @@ export default function About() {
                     </div>
                   </div>
                 </div>
-                <div className="flex flex-col items-center md:items-end justify-center px-4 py-2 border-t md:border-t-0 md:border-l border-cardBorder">
-                  <span className="text-xs text-foreground/40 font-code">CURRENT CGPA</span>
-                  <span className="text-3xl font-display font-extrabold text-accentCyan">6.02</span>
-                </div>
               </div>
 
               {/* Small Stats Grid */}
