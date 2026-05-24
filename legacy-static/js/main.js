@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const roles = [
         "Full Stack Developer",
         "Flutter Developer",
-        "Cyber Security Enthusiast"
+        "Mern stack Enthusiast"
     ];
     let roleIdx = 0;
     let charIdx = 0;
