@@ -21,10 +21,10 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Mohit Kushwah | Full Stack & Flutter Developer",
-  description: "Portfolio of Mohit Kushwah, pursuing B.Tech in CSE (Cybersecurity) at Acropolis Institute. Flutter developer, MERN Stack architect, and creator of Daily Bhakti, Rescue Mesh and SkillSwap.",
+  title: "Lakshya Soni | Full Stack & Flutter Developer",
+  description: "Portfolio of Lakshya Soni, pursuing B.Tech in CSE (Cybersecurity) at Acropolis Institute. Flutter developer, MERN Stack architect, and creator of Daily Bhakti, Rescue Mesh and SkillSwap.",
   keywords: [
-    "Mohit Kushwah",
+    "Lakshya Soni",
     "Acropolis Institute of Technology & Research",
     "Flutter Developer",
     "Full Stack Developer",
@@ -36,19 +36,19 @@ export const metadata: Metadata = {
     "SkillSwap",
     "Acropolis Engineering"
   ],
-  authors: [{ name: "Mohit Kushwah" }],
-  creator: "Mohit Kushwah",
+  authors: [{ name: "Lakshya Soni" }],
+  creator: "Lakshya Soni",
   openGraph: {
-    title: "Mohit Kushwah | Personal Portfolio",
+    title: "Lakshya Soni | Personal Portfolio",
     description: "Building mobile and web applications that solve real-world problems through clean design, modern technologies, and practical innovation.",
     url: "https://mariobeats.github.io", // Fallback URL
-    siteName: "Mohit Kushwah Portfolio",
+    siteName: "Lakshya Soni Portfolio",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Mohit Kushwah - Developer Portfolio Preview",
+        alt: "Lakshya Soni - Developer Portfolio Preview",
       },
     ],
     locale: "en_IN",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohit Kushwah | Developer Portfolio",
+    title: "Lakshya Soni | Developer Portfolio",
     description: "Building mobile and web applications that solve real-world problems through clean design, modern technologies, and practical innovation.",
     images: ["/images/og-image.png"],
   },

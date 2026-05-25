@@ -54,10 +54,10 @@ export default function Footer() {
         
         {/* Logo and Tagline */}
         <div className="text-center md:text-left space-y-2">
-          <a href="#" className="inline-flex items-center space-x-2 text-foreground font-display font-bold text-xl group" aria-label="Mohit Kushwah Home">
+          <a href="#" className="inline-flex items-center space-x-2 text-foreground font-display font-bold text-xl group" aria-label="Lakshya Soni Home">
             <span className="text-accentCyan font-code text-lg group-hover:text-accentIndigo transition-colors duration-300">&lt;/&gt;</span>
             <span>
-              Mohit<span className="text-accentCyan group-hover:text-accentIndigo transition-colors duration-300">.dev</span>
+              Lakshya<span className="text-accentCyan group-hover:text-accentIndigo transition-colors duration-300">.dev</span>
             </span>
           </a>
           <p className="text-xs text-foreground/45 max-w-xs leading-relaxed">
@@ -97,7 +97,7 @@ export default function Footer() {
       {/* Copyright & Socials bottom bar */}
       <div className="max-w-7xl mx-auto px-6 w-full mt-12 pt-6 border-t border-cardBorder/30 flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-[11px] font-code font-semibold tracking-wider text-foreground/40 text-center sm:text-left">
-          &copy; {currentYear} Mohit Kushwah. All rights reserved.
+          &copy; {currentYear} Lakshya Soni. All rights reserved.
         </p>
 
         {/* Social connections */}
@@ -123,7 +123,7 @@ export default function Footer() {
           <a
             href="mailto:mk5819444@gmail.com"
             className="hover:text-foreground hover:scale-105 active:scale-95 transition-all duration-200"
-            aria-label="Email Mohit"
+            aria-label="Email Lakshya"
           >
             <Mail className="w-5 h-5" />
           </a>

@@ -5,7 +5,7 @@ import { GraduationCap, MapPin, Calendar, BookOpen } from "lucide-react";
 
 export default function About() {
   const codeContent = `{
-  name: "Mohit Kushwah",
+  name: "Lakshya Soni",
   education: "B.Tech CSE (Cybersecurity)",
   institution: "Acropolis Institute, Indore",
   currentYear: "3rd Year (2023 - 2027)",
@@ -52,7 +52,7 @@ export default function About() {
                   <span className="w-3 h-3 rounded-full bg-yellow-500/80" />
                   <span className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
-                <span className="text-xs font-code text-foreground/40">mohit_profile.ts</span>
+                <span className="text-xs font-code text-foreground/40">lakshya_profile.ts</span>
                 <span className="w-8" />
               </div>
               {/* Terminal Window Body */}

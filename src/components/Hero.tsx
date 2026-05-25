@@ -136,7 +136,7 @@ export default function Hero() {
             variants={itemVariants}
             className="font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight mb-4"
           >
-            Hi, I&apos;m <span className="gradient-text font-extrabold">Mohit Kushwah</span>
+            Hi, I&apos;m <span className="gradient-text font-extrabold">Lakshya Soni</span>
           </motion.h1>
 
           {/* Role subtitle switcher */}
@@ -176,8 +176,8 @@ export default function Hero() {
             </a>
 
             <a
-              href="/Mohit_Kushwah_Resume.pdf"
-              download="Mohit_Kushwah_Resume.pdf"
+              href="/Lakshya_Soni_Resume.pdf"
+              download="Lakshya_Soni_Resume.pdf"
               className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-3.5 rounded-full text-sm font-semibold tracking-wide border border-cardBorder bg-cardBg hover:bg-opacity-80 active:scale-95 transition-all duration-200 text-foreground"
               id="hero-cta-resume"
             >
@@ -246,8 +246,8 @@ export default function Hero() {
 
             <div className="w-full h-full relative rounded-xl overflow-hidden border border-cardBorder">
               <Image
-                src="/images/mohit.jpg"
-                alt="Mohit Kushwah - Profile Photo"
+                src="/images/lakshya.jpg"
+                alt="Lakshya Soni - Profile Photo"
                 fill
                 priority
                 sizes="(max-w-7xl) 360px, 320px"

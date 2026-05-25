@@ -44,7 +44,7 @@ export default function Navbar({ theme, toggleTheme }: NavbarProps) {
         <a href="#" className="flex items-center space-x-2 text-foreground font-display font-bold text-xl group" id="nav-logo-link">
           <span className="text-accentCyan font-code text-lg group-hover:text-accentIndigo transition-colors duration-300">&lt;/&gt;</span>
           <span>
-            Mohit<span className="text-accentCyan group-hover:text-accentIndigo transition-colors duration-300">.dev</span>
+            Lakshya<span className="text-accentCyan group-hover:text-accentIndigo transition-colors duration-300">.dev</span>
           </span>
         </a>
 
