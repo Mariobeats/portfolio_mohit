@@ -34,7 +34,7 @@ export default function Skills() {
 
   const marqueeSkills = [
     "Flutter", "Dart", "React", "Next.js", "Tailwind CSS",
-    "Node.js", "Express.js", "MongoDB", "MySQL", "Firebase",
+    "Node.js", "Express.js", "MongoDB", "MySQL", "Firebase", "Supabase",
     "JavaScript", "TypeScript", "Python", "C++", "Git", "GitHub", "REST APIs"
   ];
 
