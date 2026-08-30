@@ -37,7 +37,7 @@ export default function Certifications() {
   ];
 
   return (
-    <section id="certifications" className="py-24 relative overflow-hidden bg-[#050507]/30">
+    <section id="credentials" className="py-24 relative overflow-hidden bg-[#050507]/30">
       <div className="max-w-7xl mx-auto px-6 w-full">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16">

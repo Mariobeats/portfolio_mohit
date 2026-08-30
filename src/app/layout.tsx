@@ -21,34 +21,35 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Lakshya Soni | Full Stack & Flutter Developer",
-  description: "Portfolio of Lakshya Soni, pursuing B.Tech in CSE (Cybersecurity) at Acropolis Institute. Flutter developer, MERN Stack architect, and creator of Daily Bhakti, Rescue Mesh and SkillSwap.",
+  metadataBase: new URL("https://portfolio-mohit-alpha.vercel.app"),
+  title: "Mohit Kushwah | Web & Mobile App Development Portfolio",
+  description: "I build fast, secure websites, web applications, dashboards, ecommerce platforms, and Flutter mobile apps for growing businesses. Based in Indore, MP, India.",
   keywords: [
-    "Lakshya Soni",
-    "Acropolis Institute of Technology & Research",
-    "Flutter Developer",
+    "Mohit Kushwah",
+    "Web Developer Indore",
+    "Flutter Mobile App Developer",
     "Full Stack Developer",
-    "Cybersecurity Enthusiast",
-    "MERN Stack",
-    "Acropolis Indore",
-    "Rescue Mesh",
-    "Daily Bhakti App",
-    "SkillSwap",
-    "Acropolis Engineering"
+    "React Developer",
+    "Next.js Developer",
+    "Node.js Developer",
+    "Custom Web Applications",
+    "Ecommerce Development",
+    "Android & iOS Apps",
+    "Acropolis Institute"
   ],
-  authors: [{ name: "Lakshya Soni" }],
-  creator: "Lakshya Soni",
+  authors: [{ name: "Mohit Kushwah" }],
+  creator: "Mohit Kushwah",
   openGraph: {
-    title: "Lakshya Soni | Personal Portfolio",
-    description: "Building mobile and web applications that solve real-world problems through clean design, modern technologies, and practical innovation.",
-    url: "https://mariobeats.github.io", // Fallback URL
-    siteName: "Lakshya Soni Portfolio",
+    title: "Mohit Kushwah | Fast & Secure Web & Mobile App Development",
+    description: "From idea to launch, I create high-quality websites, web applications, dashboards, ecommerce platforms, and Flutter mobile apps built for real users.",
+    url: "https://portfolio-mohit-alpha.vercel.app",
+    siteName: "Mohit Kushwah Portfolio",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lakshya Soni - Developer Portfolio Preview",
+        alt: "Mohit Kushwah - Web & Mobile App Developer Portfolio",
       },
     ],
     locale: "en_IN",
@@ -56,8 +57,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lakshya Soni | Developer Portfolio",
-    description: "Building mobile and web applications that solve real-world problems through clean design, modern technologies, and practical innovation.",
+    title: "Mohit Kushwah | Web & Mobile Developer",
+    description: "Building fast, secure websites, web apps, and Flutter mobile apps for growing businesses.",
     images: ["/images/og-image.png"],
   },
   robots: {

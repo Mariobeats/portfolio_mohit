@@ -3,9 +3,12 @@
 import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Services from "@/components/Services";
+import Projects from "@/components/Projects";
+import Process from "@/components/Process";
+import TrustCredibility from "@/components/TrustCredibility";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
-import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Certifications from "@/components/Certifications";
 import GithubSection from "@/components/Github";
@@ -42,12 +45,15 @@ export default function Home() {
       {/* Primary header & Navigation */}
       <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-      {/* Main content grid */}
+      {/* Main content grid in client conversion sequence */}
       <main id="main-content">
         <Hero />
+        <Services />
+        <Projects />
+        <Process />
+        <TrustCredibility />
         <About />
         <Skills />
-        <Projects />
         <Experience />
         <Certifications />
         <GithubSection />

@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -38,13 +38,15 @@ export default function Footer() {
 
   const linksLeft = [
     { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
+    { name: "Services", href: "#services" },
     { name: "Projects", href: "#projects" },
+    { name: "Process", href: "#process" },
   ];
 
   const linksRight = [
-    { name: "Experience", href: "#experience" },
-    { name: "Certifications", href: "#certifications" },
+    { name: "Skills", href: "#skills" },
+    { name: "Credentials", href: "#credentials" },
+    { name: "GitHub", href: "#github" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -54,25 +56,25 @@ export default function Footer() {
         
         {/* Logo and Tagline */}
         <div className="text-center md:text-left space-y-2">
-          <a href="#" className="inline-flex items-center space-x-2 text-foreground font-display font-bold text-xl group" aria-label="Lakshya Soni Home">
+          <a href="#" className="inline-flex items-center space-x-2 text-foreground font-display font-bold text-xl group" aria-label="Mohit Kushwah Home">
             <span className="text-accentCyan font-code text-lg group-hover:text-accentIndigo transition-colors duration-300">&lt;/&gt;</span>
             <span>
-              Lakshya<span className="text-accentCyan group-hover:text-accentIndigo transition-colors duration-300">.dev</span>
+              Mohit<span className="text-accentCyan group-hover:text-accentIndigo transition-colors duration-300">.dev</span>
             </span>
           </a>
-          <p className="text-xs text-foreground/45 max-w-xs leading-relaxed">
-            Building secure, performant, and premium digital mobile and web experiences.
+          <p className="text-xs text-foreground/50 max-w-xs leading-relaxed">
+            Building fast, secure websites, custom web applications, and Flutter mobile apps built for growing businesses.
           </p>
         </div>
 
         {/* Navigation columns */}
-        <div className="flex space-x-12 sm:space-x-24 text-sm text-center md:text-left">
+        <div className="flex space-x-12 sm:space-x-24 text-xs font-code font-semibold text-center md:text-left">
           <ul className="space-y-3">
             {linksLeft.map((link) => (
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="text-foreground/50 hover:text-foreground transition-colors duration-200"
+                  className="text-foreground/60 hover:text-foreground transition-colors duration-200"
                 >
                   {link.name}
                 </a>
@@ -84,7 +86,7 @@ export default function Footer() {
               <li key={link.name}>
                 <a
                   href={link.href}
-                  className="text-foreground/50 hover:text-foreground transition-colors duration-200"
+                  className="text-foreground/60 hover:text-foreground transition-colors duration-200"
                 >
                   {link.name}
                 </a>
@@ -96,12 +98,12 @@ export default function Footer() {
 
       {/* Copyright & Socials bottom bar */}
       <div className="max-w-7xl mx-auto px-6 w-full mt-12 pt-6 border-t border-cardBorder/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-[11px] font-code font-semibold tracking-wider text-foreground/40 text-center sm:text-left">
-          &copy; {currentYear} Lakshya Soni. All rights reserved.
+        <p className="text-[11px] font-code font-semibold tracking-wider text-foreground/45 text-center sm:text-left">
+          &copy; {currentYear} Mohit Kushwah. All rights reserved.
         </p>
 
         {/* Social connections */}
-        <div className="flex items-center space-x-5 text-foreground/50">
+        <div className="flex items-center space-x-6 text-foreground/60">
           <a
             href="https://github.com/Mariobeats"
             target="_blank"
@@ -123,9 +125,18 @@ export default function Footer() {
           <a
             href="mailto:mk5819444@gmail.com"
             className="hover:text-foreground hover:scale-105 active:scale-95 transition-all duration-200"
-            aria-label="Email Lakshya"
+            aria-label="Email Mohit"
           >
             <Mail className="w-5 h-5" />
+          </a>
+          <a
+            href="https://wa.me/917000753083"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emerald-400 hover:scale-105 active:scale-95 transition-all duration-200"
+            aria-label="WhatsApp Mohit"
+          >
+            <Phone className="w-5 h-5" />
           </a>
         </div>
       </div>
