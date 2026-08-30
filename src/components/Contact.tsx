@@ -224,7 +224,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {/* Name */}
                   <div className="space-y-2">
-                    <label htmlFor="form-name" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                    <label htmlFor="form-name" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                       <User className="w-3.5 h-3.5 mr-1.5 text-accentCyan" />
                       Your Name <span className="text-accentCyan ml-1">*</span>
                     </label>
@@ -237,13 +237,13 @@ export default function Contact() {
                       placeholder="e.g. Rahul Sharma"
                       required
                       autoComplete="name"
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
                     />
                   </div>
 
                   {/* Email */}
                   <div className="space-y-2">
-                    <label htmlFor="form-email" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                    <label htmlFor="form-email" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                       <Mail className="w-3.5 h-3.5 mr-1.5 text-accentCyan" />
                       Email Address <span className="text-accentCyan ml-1">*</span>
                     </label>
@@ -256,7 +256,7 @@ export default function Contact() {
                       placeholder="e.g. rahul@company.com"
                       required
                       autoComplete="email"
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
                     />
                   </div>
                 </div>
@@ -265,7 +265,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {/* Project Type */}
                   <div className="space-y-2">
-                    <label htmlFor="form-projectType" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                    <label htmlFor="form-projectType" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                       <Layers className="w-3.5 h-3.5 mr-1.5 text-accentPurple" />
                       Project Type
                     </label>
@@ -274,21 +274,21 @@ export default function Contact() {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
                     >
-                      <option value="Website" className="bg-background text-foreground">Business Website / Landing Page</option>
-                      <option value="Ecommerce" className="bg-background text-foreground">Ecommerce Website</option>
-                      <option value="Web App" className="bg-background text-foreground">Custom Web App & Admin Dashboard</option>
-                      <option value="Mobile App" className="bg-background text-foreground">Android & iOS Flutter Mobile App</option>
-                      <option value="UI/UX & Maintenance" className="bg-background text-foreground">UI/UX Improvements & Maintenance</option>
-                      <option value="API & Backend" className="bg-background text-foreground">API & Backend Development</option>
-                      <option value="Other" className="bg-background text-foreground">Other Custom Project</option>
+                      <option value="Website" className="bg-[#0b0c10] text-slate-100">Business Website / Landing Page</option>
+                      <option value="Ecommerce" className="bg-[#0b0c10] text-slate-100">Ecommerce Website</option>
+                      <option value="Web App" className="bg-[#0b0c10] text-slate-100">Custom Web App & Admin Dashboard</option>
+                      <option value="Mobile App" className="bg-[#0b0c10] text-slate-100">Android & iOS Flutter Mobile App</option>
+                      <option value="UI/UX & Maintenance" className="bg-[#0b0c10] text-slate-100">UI/UX Improvements & Maintenance</option>
+                      <option value="API & Backend" className="bg-[#0b0c10] text-slate-100">API & Backend Development</option>
+                      <option value="Other" className="bg-[#0b0c10] text-slate-100">Other Custom Project</option>
                     </select>
                   </div>
 
                   {/* Estimated Budget */}
                   <div className="space-y-2">
-                    <label htmlFor="form-budget" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                    <label htmlFor="form-budget" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                       <DollarSign className="w-3.5 h-3.5 mr-1.5 text-emerald-400" />
                       Estimated Budget
                     </label>
@@ -297,13 +297,13 @@ export default function Contact() {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
                     >
-                      <option value="Under ₹25,000" className="bg-background text-foreground">Under ₹25,000</option>
-                      <option value="₹25,000–₹75,000" className="bg-background text-foreground">₹25,000 – ₹75,000</option>
-                      <option value="₹75,000–₹2,00,000" className="bg-background text-foreground">₹75,000 – ₹2,00,000</option>
-                      <option value="₹2,00,000+" className="bg-background text-foreground">₹2,00,000+</option>
-                      <option value="Not sure yet" className="bg-background text-foreground">Not sure yet</option>
+                      <option value="Under ₹25,000" className="bg-[#0b0c10] text-slate-100">Under ₹25,000</option>
+                      <option value="₹25,000–₹75,000" className="bg-[#0b0c10] text-slate-100">₹25,000 – ₹75,000</option>
+                      <option value="₹75,000–₹2,00,000" className="bg-[#0b0c10] text-slate-100">₹75,000 – ₹2,00,000</option>
+                      <option value="₹2,00,000+" className="bg-[#0b0c10] text-slate-100">₹2,00,000+</option>
+                      <option value="Not sure yet" className="bg-[#0b0c10] text-slate-100">Not sure yet</option>
                     </select>
                   </div>
                 </div>
@@ -312,7 +312,7 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   {/* Desired Launch Date */}
                   <div className="space-y-2">
-                    <label htmlFor="form-launchDate" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                    <label htmlFor="form-launchDate" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                       <Calendar className="w-3.5 h-3.5 mr-1.5 text-amber-400" />
                       Desired Launch Date
                     </label>
@@ -321,18 +321,18 @@ export default function Contact() {
                       name="launchDate"
                       value={formData.launchDate}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
                     >
-                      <option value="Urgent (Asap)" className="bg-background text-foreground">Urgent (Within 2 Weeks)</option>
-                      <option value="Within 1 Month" className="bg-background text-foreground">Within 1 Month</option>
-                      <option value="2-3 Months" className="bg-background text-foreground">2 – 3 Months</option>
-                      <option value="Flexible Timeline" className="bg-background text-foreground">Flexible Timeline</option>
+                      <option value="Urgent (Asap)" className="bg-[#0b0c10] text-slate-100">Urgent (Within 2 Weeks)</option>
+                      <option value="Within 1 Month" className="bg-[#0b0c10] text-slate-100">Within 1 Month</option>
+                      <option value="2-3 Months" className="bg-[#0b0c10] text-slate-100">2 – 3 Months</option>
+                      <option value="Flexible Timeline" className="bg-[#0b0c10] text-slate-100">Flexible Timeline</option>
                     </select>
                   </div>
 
                   {/* Preferred Contact Method */}
                   <div className="space-y-2">
-                    <label htmlFor="form-contactMethod" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                    <label htmlFor="form-contactMethod" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                       <Phone className="w-3.5 h-3.5 mr-1.5 text-accentCyan" />
                       Preferred Contact Method
                     </label>
@@ -341,18 +341,18 @@ export default function Contact() {
                       name="contactMethod"
                       value={formData.contactMethod}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
                     >
-                      <option value="WhatsApp" className="bg-background text-foreground">WhatsApp</option>
-                      <option value="Email" className="bg-background text-foreground">Email</option>
-                      <option value="Phone Call" className="bg-background text-foreground">Phone Call</option>
+                      <option value="WhatsApp" className="bg-[#0b0c10] text-slate-100">WhatsApp</option>
+                      <option value="Email" className="bg-[#0b0c10] text-slate-100">Email</option>
+                      <option value="Phone Call" className="bg-[#0b0c10] text-slate-100">Phone Call</option>
                     </select>
                   </div>
                 </div>
 
                 {/* Required Features / Requirements */}
                 <div className="space-y-2">
-                  <label htmlFor="form-requirements" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                  <label htmlFor="form-requirements" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                     <Sparkles className="w-3.5 h-3.5 mr-1.5 text-accentCyan" />
                     Required Features & Key Requirements <span className="text-accentCyan ml-1">*</span>
                   </label>
@@ -364,13 +364,13 @@ export default function Contact() {
                     onChange={handleInputChange}
                     placeholder="Describe what your app or website needs to do (e.g. user login, payment gateway, admin panel, product catalog, offline sync...)"
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 resize-none shadow-inner"
                   />
                 </div>
 
                 {/* Reference Websites or Apps */}
                 <div className="space-y-2">
-                  <label htmlFor="form-references" className="text-xs font-semibold uppercase tracking-widest text-foreground/60 font-code flex items-center">
+                  <label htmlFor="form-references" className="text-xs font-semibold uppercase tracking-widest text-foreground/80 font-code flex items-center">
                     <LinkIcon className="w-3.5 h-3.5 mr-1.5 text-foreground/45" />
                     Reference Websites or Apps (Optional)
                   </label>
@@ -381,7 +381,7 @@ export default function Contact() {
                     value={formData.references}
                     onChange={handleInputChange}
                     placeholder="e.g. stripe.com, Airbnb app UI style..."
-                    className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-background/50 text-foreground placeholder:text-foreground/30 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
                   />
                 </div>
 
