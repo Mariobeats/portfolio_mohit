@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ChevronRight, User, Send, CheckCircle2, MessageCircle, Calendar, DollarSign, Layers, Link as LinkIcon, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin, ChevronRight, User, Send, CheckCircle2, MessageCircle, Calendar, DollarSign, Layers, Link as LinkIcon, Sparkles, AlertCircle } from "lucide-react";
 
 const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -24,13 +24,12 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    projectType: "Website",
-    budget: "₹25,000–₹75,000",
+    projectType: "Business Website / Landing Page",
+    budget: "₹25,000 – ₹75,000",
     launchDate: "Within 1 Month",
     requirements: "",
     references: "",
     contactMethod: "WhatsApp",
-    message: "",
   });
 
   const [formStatus, setFormStatus] = useState<{
@@ -46,31 +45,72 @@ export default function Contact() {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+    if (formStatus.type === "error") {
+      setFormStatus({ type: "idle", message: "" });
+    }
   };
 
-  const generateWhatsAppUrl = () => {
-    const text = `*New Project Enquiry for Mohit Kushwah*%0A%0A` +
-      `*Name:* ${encodeURIComponent(formData.name || "Client")}%0A` +
-      `*Email:* ${encodeURIComponent(formData.email || "Not specified")}%0A` +
-      `*Project Type:* ${encodeURIComponent(formData.projectType)}%0A` +
-      `*Estimated Budget:* ${encodeURIComponent(formData.budget)}%0A` +
-      `*Desired Launch Date:* ${encodeURIComponent(formData.launchDate)}%0A` +
-      `*Preferred Contact Method:* ${encodeURIComponent(formData.contactMethod)}%0A` +
-      `*Requirements:* ${encodeURIComponent(formData.requirements || "Details pending")}%0A` +
-      `*Reference Apps/Websites:* ${encodeURIComponent(formData.references || "None provided")}%0A` +
-      `*Additional Notes:* ${encodeURIComponent(formData.message || "None")}`;
-    
-    return `https://wa.me/917000753083?text=${text}`;
+  const buildWhatsAppMessage = (data: typeof formData) => {
+    const refText = data.references.trim() ? data.references.trim() : "Not provided";
+    return `New Project Enquiry for Mohit Kushwah\n\n` +
+      `Name: ${data.name.trim()}\n` +
+      `Email: ${data.email.trim()}\n` +
+      `Project Type: ${data.projectType}\n` +
+      `Estimated Budget: ${data.budget}\n` +
+      `Desired Launch Date: ${data.launchDate}\n` +
+      `Preferred Contact Method: ${data.contactMethod}\n\n` +
+      `Requirements:\n${data.requirements.trim()}\n\n` +
+      `Reference Websites / Apps:\n${refText}`;
+  };
+
+  const getWhatsAppUrl = (data: typeof formData) => {
+    const message = buildWhatsAppMessage(data);
+    return `https://wa.me/917000753083?text=${encodeURIComponent(message)}`;
+  };
+
+  const validateForm = () => {
+    if (!formData.name.trim()) {
+      setFormStatus({
+        type: "error",
+        message: "Please enter your Name before proceeding.",
+      });
+      return false;
+    }
+    if (!formData.email.trim() || !formData.email.includes("@")) {
+      setFormStatus({
+        type: "error",
+        message: "Please enter a valid Email Address.",
+      });
+      return false;
+    }
+    if (!formData.requirements.trim()) {
+      setFormStatus({
+        type: "error",
+        message: "Please specify your Required Features & Key Requirements.",
+      });
+      return false;
+    }
+    return true;
+  };
+
+  const handleWhatsAppAction = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
+
+    setFormStatus({
+      type: "success",
+      message: "Opening WhatsApp with your project enquiry details...",
+    });
+
+    const url = getWhatsAppUrl(formData);
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!formData.name || !formData.email || !formData.requirements) {
-      setFormStatus({
-        type: "error",
-        message: "Please fill in your Name, Email Address, and Project Requirements.",
-      });
+    if (!validateForm()) {
       return;
     }
 
@@ -79,13 +119,15 @@ export default function Contact() {
       message: "",
     });
 
-    // Simulate sending delay
     setTimeout(() => {
       setFormStatus({
         type: "success",
-        message: "Thank you! Your project enquiry was sent successfully. I will review your details and get back to you within 1 business day.",
+        message: "Thank you! Your project enquiry details were validated. Opening WhatsApp to connect with Mohit...",
       });
-    }, 1200);
+
+      const url = getWhatsAppUrl(formData);
+      window.open(url, "_blank", "noopener,noreferrer");
+    }, 600);
   };
 
   const contactMethodsList = [
@@ -180,15 +222,14 @@ export default function Contact() {
 
               {/* Instant WhatsApp Quick CTA */}
               <div className="pt-4 border-t border-cardBorder/40">
-                <a
-                  href={generateWhatsAppUrl()}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center w-full py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs tracking-wide transition-all duration-200 shadow-lg group"
+                <button
+                  type="button"
+                  onClick={handleWhatsAppAction}
+                  className="inline-flex items-center justify-center w-full py-3.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold text-xs tracking-wide transition-all duration-200 shadow-lg group cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 mr-2 fill-slate-950" />
                   <span>Send Quick Enquiry via WhatsApp</span>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -218,7 +259,7 @@ export default function Contact() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="rounded-2xl border border-cardBorder bg-cardBg glass-panel p-6 sm:p-8 glow-card">
-              <form onSubmit={handleSubmit} className="space-y-6" id="project-enquiry-form">
+              <form onSubmit={handleSubmit} className="space-y-6" id="project-enquiry-form" noValidate>
                 
                 {/* Row 1: Name & Email */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -274,15 +315,15 @@ export default function Contact() {
                       name="projectType"
                       value={formData.projectType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner cursor-pointer"
                     >
-                      <option value="Website" className="bg-[#0b0c10] text-slate-100">Business Website / Landing Page</option>
-                      <option value="Ecommerce" className="bg-[#0b0c10] text-slate-100">Ecommerce Website</option>
-                      <option value="Web App" className="bg-[#0b0c10] text-slate-100">Custom Web App & Admin Dashboard</option>
-                      <option value="Mobile App" className="bg-[#0b0c10] text-slate-100">Android & iOS Flutter Mobile App</option>
-                      <option value="UI/UX & Maintenance" className="bg-[#0b0c10] text-slate-100">UI/UX Improvements & Maintenance</option>
-                      <option value="API & Backend" className="bg-[#0b0c10] text-slate-100">API & Backend Development</option>
-                      <option value="Other" className="bg-[#0b0c10] text-slate-100">Other Custom Project</option>
+                      <option value="Business Website / Landing Page" className="bg-[#0b0c10] text-slate-100">Business Website / Landing Page</option>
+                      <option value="Ecommerce Website" className="bg-[#0b0c10] text-slate-100">Ecommerce Website</option>
+                      <option value="Custom Web App & Admin Dashboard" className="bg-[#0b0c10] text-slate-100">Custom Web App & Admin Dashboard</option>
+                      <option value="Android & iOS Flutter Mobile App" className="bg-[#0b0c10] text-slate-100">Android & iOS Flutter Mobile App</option>
+                      <option value="UI/UX Improvements & Maintenance" className="bg-[#0b0c10] text-slate-100">UI/UX Improvements & Maintenance</option>
+                      <option value="API & Backend Development" className="bg-[#0b0c10] text-slate-100">API & Backend Development</option>
+                      <option value="Other Custom Project" className="bg-[#0b0c10] text-slate-100">Other Custom Project</option>
                     </select>
                   </div>
 
@@ -297,11 +338,11 @@ export default function Contact() {
                       name="budget"
                       value={formData.budget}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner cursor-pointer"
                     >
                       <option value="Under ₹25,000" className="bg-[#0b0c10] text-slate-100">Under ₹25,000</option>
-                      <option value="₹25,000–₹75,000" className="bg-[#0b0c10] text-slate-100">₹25,000 – ₹75,000</option>
-                      <option value="₹75,000–₹2,00,000" className="bg-[#0b0c10] text-slate-100">₹75,000 – ₹2,00,000</option>
+                      <option value="₹25,000 – ₹75,000" className="bg-[#0b0c10] text-slate-100">₹25,000 – ₹75,000</option>
+                      <option value="₹75,000 – ₹2,00,000" className="bg-[#0b0c10] text-slate-100">₹75,000 – ₹2,00,000</option>
                       <option value="₹2,00,000+" className="bg-[#0b0c10] text-slate-100">₹2,00,000+</option>
                       <option value="Not sure yet" className="bg-[#0b0c10] text-slate-100">Not sure yet</option>
                     </select>
@@ -321,11 +362,11 @@ export default function Contact() {
                       name="launchDate"
                       value={formData.launchDate}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner cursor-pointer"
                     >
-                      <option value="Urgent (Asap)" className="bg-[#0b0c10] text-slate-100">Urgent (Within 2 Weeks)</option>
+                      <option value="Urgent (Within 2 Weeks)" className="bg-[#0b0c10] text-slate-100">Urgent (Within 2 Weeks)</option>
                       <option value="Within 1 Month" className="bg-[#0b0c10] text-slate-100">Within 1 Month</option>
-                      <option value="2-3 Months" className="bg-[#0b0c10] text-slate-100">2 – 3 Months</option>
+                      <option value="2 – 3 Months" className="bg-[#0b0c10] text-slate-100">2 – 3 Months</option>
                       <option value="Flexible Timeline" className="bg-[#0b0c10] text-slate-100">Flexible Timeline</option>
                     </select>
                   </div>
@@ -341,7 +382,7 @@ export default function Contact() {
                       name="contactMethod"
                       value={formData.contactMethod}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner"
+                      className="w-full px-4 py-3 rounded-xl border border-cardBorder bg-[#0b0c10] text-slate-100 focus:outline-none focus:ring-1 focus:ring-accentCyan focus:border-accentCyan text-sm transition-all duration-200 shadow-inner cursor-pointer"
                     >
                       <option value="WhatsApp" className="bg-[#0b0c10] text-slate-100">WhatsApp</option>
                       <option value="Email" className="bg-[#0b0c10] text-slate-100">Email</option>
@@ -390,13 +431,13 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={formStatus.type === "sending"}
-                    className="flex-1 inline-flex items-center justify-center py-4 px-6 rounded-xl text-sm font-bold tracking-wide bg-foreground text-background hover:opacity-90 active:scale-[0.98] transition-all duration-200 disabled:opacity-50 shadow-lg"
+                    className="flex-1 inline-flex items-center justify-center py-4 px-6 rounded-xl text-sm font-bold tracking-wide bg-foreground text-background hover:opacity-90 active:scale-[0.98] transition-all duration-200 disabled:opacity-50 shadow-lg cursor-pointer"
                     id="form-submit-btn"
                   >
                     {formStatus.type === "sending" ? (
                       <span className="flex items-center space-x-2">
                         <span className="w-4 h-4 border-2 border-background border-t-transparent rounded-full animate-spin" />
-                        <span>Sending Request...</span>
+                        <span>Validating & Sending...</span>
                       </span>
                     ) : (
                       <span className="flex items-center justify-center">
@@ -406,15 +447,15 @@ export default function Contact() {
                     )}
                   </button>
 
-                  <a
-                    href={generateWhatsAppUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center py-4 px-6 rounded-xl text-sm font-bold tracking-wide border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 transition-all duration-200 shadow-sm"
+                  <button
+                    type="button"
+                    onClick={handleWhatsAppAction}
+                    className="inline-flex items-center justify-center py-4 px-6 rounded-xl text-sm font-bold tracking-wide border border-emerald-500/50 bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 transition-all duration-200 shadow-sm cursor-pointer"
+                    id="form-whatsapp-btn"
                   >
                     <MessageCircle className="w-4 h-4 mr-2" />
                     <span>Send via WhatsApp</span>
-                  </a>
+                  </button>
                 </div>
 
                 {/* Notice text requested in prompt */}
@@ -433,7 +474,11 @@ export default function Contact() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
-                    {formStatus.type === "success" && <CheckCircle2 className="w-5 h-5 mr-2 flex-shrink-0 text-emerald-400" />}
+                    {formStatus.type === "success" ? (
+                      <CheckCircle2 className="w-5 h-5 mr-2 flex-shrink-0 text-emerald-400" />
+                    ) : (
+                      <AlertCircle className="w-5 h-5 mr-2 flex-shrink-0 text-red-400" />
+                    )}
                     <span className="leading-relaxed">{formStatus.message}</span>
                   </motion.div>
                 )}
