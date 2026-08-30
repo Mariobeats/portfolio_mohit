@@ -192,7 +192,7 @@ export default function Hero() {
 
             {/* Resume Button */}
             <a
-              href="/Lakshya_Soni_Resume.pdf"
+              href="/Mohit_Kushwah_Resume.pdf"
               download="Mohit_Kushwah_Resume.pdf"
               className="inline-flex items-center justify-center px-6 py-4 rounded-full text-xs font-semibold tracking-wide border border-cardBorder/60 text-foreground/75 hover:text-foreground hover:bg-cardBg transition-all duration-200"
               id="hero-cta-resume"
