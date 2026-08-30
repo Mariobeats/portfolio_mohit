@@ -18,7 +18,7 @@ export default function Skills() {
     {
       title: "Databases & Storage",
       icon: <Database className="w-5 h-5 text-indigo-400" />,
-      skills: ["MongoDB", "MySQL", "Firebase"],
+      skills: ["MongoDB", "MySQL", "Firebase", "Supabase" ],
     },
     {
       title: "Programming Languages",
